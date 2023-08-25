@@ -2,8 +2,9 @@
 # 1, 1, 2, 4, 7, 13, 24, 44, 81, ...
 
 tribonacci = [1,1,2]
+input = gets.to_i
 
-while tribonacci.length < 10
+while tribonacci.length < input
   tribonacci << tribonacci[- 1] + tribonacci[- 2] + tribonacci[- 3]
 end
 
