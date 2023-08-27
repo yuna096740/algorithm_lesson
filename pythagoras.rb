@@ -17,16 +17,24 @@ def gcd(a, b)
   end
 end
 
-# 正の整数nを入力
+# cの探索範囲を入力
 print "num:"
 num = gets.to_i
+# ピタゴラス数の個数を記録するための変数count
 count = 0
+# m < √num (平方根)
 m_max = Integer(Math.sqrt(num))
+# mを1からm_maxまで1ずつ増やす．
 (1..m_max).each do |m|
+  # nを1からn-1まで1ずつ増やす．
   (1...m).each do |n|
+    # mとn どちらかが偶数でもう一方が奇数である
     if m % 2 != n % 2
-      if gcd(m,n) == 1
-        count += (num/ (m**2 + n**2)).to_i
+      # m,n互いに素
+      if gcd(m, n) == 1
+        # 定数倍したものもピタゴラス数なので一気に個数を追加
+        #（cが探索範囲を超えていた場合+0になる）
+        count += (num / (m**2 + n**2)).to_i
       end
     end
   end
