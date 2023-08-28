@@ -39,4 +39,5 @@ m_max = Integer(Math.sqrt(num))
     end
   end
 end
+
 puts count
